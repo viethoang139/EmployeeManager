@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Employee</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+</head>
+<body>
+    <div class="container-fluid text-center">
+        <h1>Edit Employee</h1>
+       <div class="m-2">
+            <form th:action="@{/edit}" method="post" th:object="${employees}"
+            style="max-width: 500px; margin: 0 auto;" enctype="multipart/form-data" >
+                <div class="border border-secondary p-3">
+
+                    <input type="hidden" th:field="*{id}">
+
+                    <div class="form-group row m-2">
+                        <label class="col-form-label col-4">E-mail</label>
+                        <div class="col-8">
+                            <input type="email" th:field="*{email}" class="form-control" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group row m-2">
+                        <label class="col-form-label col-4">Photo</label>
+                        <div class="col-8">
+                            <input type="file" name="image" class="form-control" accept="image/png , image/jpeg"  required>
+                        </div>
+                    </div>
+
+                    <div class="form-group row m-2">
+                        <label class="col-form-label col-4">Password</label>
+                        <div class="col-8">
+                            <input type="password" th:field="*{password}" class="form-control" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group row m-2">
+                        <label class="col-form-label col-4">First Name</label>
+                        <div class="col-8">
+                            <input type="text" th:field="*{firstName}" class="form-control" required minlength="4" maxlength="20">
+                        </div>
+                    </div>
+
+                    <div class="form-group row m-2">
+                        <label class="col-form-label col-4">Last Name</label>
+                        <div class="col-8">
+                            <input type="text" th:field="*{lastName}" class="form-control" required minlength="4" maxlength="20">
+                        </div>
+                    </div>
+
+                    <div class="form-group row m-2">
+                        <label class="col-form-label col-4">Address</label>
+                        <div class="col-8">
+                            <input type="text" th:field="*{address}" class="form-control" required minlength="4" maxlength="20">
+                        </div>
+                    </div>
+
+                    <div class="form-group row m-2">
+                        <label class="col-form-label col-4">Gender</label>
+                        <div class="col-8">
+                            <div class="form-check form-check-inline m-2">
+                                <input class="form-check-input" type="radio" name="gender1" th:field="*{gender}" id="genderMale" value="Male">
+                                <label class="form-check-label" for="genderMale">Male</label>
+                            </div>
+                            <div class="form-check form-check-inline m-2">
+                                <input class="form-check-input" type="radio" name="gender2" th:field="*{gender}" id="genderFemale" value="Female">
+                                <label class="form-check-label" for="genderFemale">Female</label>
+                            </div>
+                    </div>
+
+                        <div class="m-2">
+                                <button type="submit" class="btn btn-primary m-2">Edit</button>
+                                <button type="submit" class="btn btn-secondary" onclick="cancelForm()">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+       </div>
+    </div>
+<script type="text/javascript">
+    function cancelForm(){
+        window.location="[[@{/employees}]]";
+    }
+</script>
+</body>
+</html>

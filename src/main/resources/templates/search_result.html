@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Manager</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+</head>
+<body>
+    <div class="container-fluid text-center">
+        <h2>Search result for '<b>[[${keyword}]]</b>'</h2>
+        <div class="m-2">
+            <table class="table table-bordered table-striped">
+                <thead class="table-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Email</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Address</th>
+                    <th>Gender</th>
+                </tr>
+                </thead>
+                <tbody th:each="list : ${employees}">
+                <tr>
+                    <td>[[${list.id}]]</td>
+                    <td>[[${list.email}]]</td>
+                    <td>[[${list.firstName}]]</td>
+                    <td>[[${list.lastName}]]</td>
+                    <td>[[${list.address}]]</td>
+                    <td>[[${list.gender}]]</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
