@@ -13,6 +13,7 @@
                 <thead class="table-dark">
                 <tr>
                     <th>ID</th>
+                    <th>Photo</th>
                     <th>Email</th>
                     <th>First Name</th>
                     <th>Last Name</th>
@@ -23,6 +24,9 @@
                 <tbody th:each="list : ${employees}">
                 <tr>
                     <td>[[${list.id}]]</td>
+                    <td>
+                        <img th:src="@{${list.photoImagePath}}" style="width: 100px">
+                    </td>
                     <td>[[${list.email}]]</td>
                     <td>[[${list.firstName}]]</td>
                     <td>[[${list.lastName}]]</td>
