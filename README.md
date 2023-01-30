@@ -33,6 +33,8 @@ Front-end:
  
  - Truy cập vào đường dẫn: http://localhost:8080
  
+ - Ấn vào đường link Employee Manager
+ 
  - Phân quyền và xác thực:
  
     - Tài khoản ADMIN:
