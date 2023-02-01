@@ -27,6 +27,7 @@ Front-end:
   - Remember me (không cần đăng nhập vào những lần tiếp theo)
   - Quên mật khẩu (giúp đặt lại mật khẩu thông qua đường link được gửi đến email của người dùng)
   - Phân trang
+  - Upload ảnh
   - Chức năng tìm kiếm giúp người dùng tìm kiếm thông tin
   
  Demo chương trình:
